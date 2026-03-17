@@ -19,7 +19,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          ref: nightly
+          ref: main
 
       - name: Login to GitHub Container Registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
@@ -48,8 +48,8 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
           tags: |
-            ghcr.io/insertdisc/pattrmm:nightly
-            ${{ secrets.DOCKER_HUB_USERNAME }}/pattrmm:nightly
+            ghcr.io/insertdisc/yolks:boiii
+            ${{ secrets.DOCKER_HUB_USERNAME }}/yolks:boiii
           cache-from: type=gha
           cache-to: type=gha,mode=max 
           
